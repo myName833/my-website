@@ -1,11 +1,14 @@
 /* App.css */
+/* Responsive Design for larger screens */
+/* Keep all your existing styles from the start to the footer styles */
 body {
     font-family: "Caveat Brush", cursive;
     background-color: whitesmoke;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 @keyframes navbarDropDown {
     0% {
