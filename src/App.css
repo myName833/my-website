@@ -1,0 +1,720 @@
+/* App.css */
+body {
+    font-family: "Caveat Brush", cursive;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+}
+@keyframes navbarDropDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%) scaleY(0);
+    }
+    70% {
+        opacity: 0.8;
+        transform: translateY(10%) scaleY(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}   
+
+.navbar {
+    width: calc(100% - 400px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #06768d;
+    padding: 15px;
+    height: 75px;
+    position: fixed;
+    top: 5px;
+    left: 200px;
+    right: 200px;
+    border-radius: 50px;
+    box-shadow: 0 20px 20px rgba(232, 62, 62, 0.1);
+    /* Remove the initial opacity here */
+    animation: navbarDropDown 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    transform: translateY(0); /* Ensure it stays in place */
+    transform-origin: top center;
+    z-index: 1;
+}
+
+
+/* Optional: Slight bounce effect for navbar links */
+.navbar li {
+    animation: navbarLinkBounce 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s backwards;
+}
+@keyframes navbarLinkBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.5);
+    }
+    70% {
+        opacity: 0.8;
+        transform: translateY(10%) scale(1.1);
+    }
+    100% {
+        opacity: 5;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.navbar-home {
+    position: absolute; /* Position absolutely within the navbar */
+    left: 50px; /* 50px from the left of the navbar */
+    font-size: 35px;
+    font-family: "Caveat Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 1s ease-in-out;
+}
+
+.navbar-links {
+    margin-left: auto; /* Push links to the right side */
+    margin-right: 50px; /* Add some right margin */
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 5px;
+    font-size: 35px;
+}
+
+.navbar li {
+    display: inline-flex;
+    margin-right: 15px;
+    font-family: "Covered By Your Grace", cursive;
+    font-size: 35px;
+    font-weight: 400;
+    font-style: normal;
+    padding-right: 20px;
+}
+
+/* Existing styles remain the same */
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    opacity: 1;
+    transition: color 0.3s ease;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute; /* Change from fixed to absolute */
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: wheat;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f9f4f4; /* Slightly lighter color on hover */
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.navbar-home:hover {
+    transform: scale(1.05); /* Slight scale up on hover */
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.navbar li a:hover {
+    text-shadow: 0 0 10px rgba(10, 10, 10, 0.5);
+    transform: translateY(-5px);
+    transition: all 0.3s ease; /* Added all to include text-shadow and transform */
+}
+#about-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #002E4C; /* Deep navy blue for better readability */
+    position: fixed;
+    width: 700px;
+    left: 100px;
+    top: 150px;
+    font-size: 25px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400; /* Adjusted from 10 to 400 for better font weight */
+    
+    /* Improved background with translucency */
+    background-color: rgba(255, 255, 255, 0.7); /* Soft white with transparency */
+    border: 2px solid rgba(6, 118, 141, 0.3); /* Subtle border with brand color */
+    border-radius: 20px;
+    padding: 20px;
+    line-height: 1.6;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    backdrop-filter: blur(5px); /* Adds a blur effect behind the text */
+    transition: all 0.3s ease;
+}
+
+#about-me:hover {
+    transform: scale(1.05); /* Slight scale up on hover */
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly more opaque on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: rgba(6, 118, 141, 0.5);
+}
+@keyframes advancedEntrance {
+    0% {
+        opacity: 0;
+        transform: 
+            perspective(1000px) 
+            rotateX(-75deg) 
+            rotateY(30deg) 
+            translateZ(-500px) 
+            scale(0.5);
+    }
+    40% {
+        opacity: 0.2;
+        transform: 
+            perspective(1000px) 
+            rotateX(20deg) 
+            rotateY(-15deg) 
+            translateZ(-200px) 
+            scale(0.8);
+    }
+    70% {
+        opacity: 0.6;
+        transform: 
+            perspective(1000px) 
+            rotateX(-10deg) 
+            rotateY(5deg) 
+            translateZ(-50px) 
+            scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: 
+            perspective(1000px) 
+            rotateX(0deg) 
+            rotateY(0deg) 
+            translateZ(0) 
+            scale(1);
+    }
+}
+
+#about-me {
+    animation: 
+        advancedEntrance 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards,
+        subtleFloat 3s ease-in-out infinite alternate;
+    transform-origin: center center;
+    animation-delay: 0.3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes subtleFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 5px 15px rgba(6, 118, 141, 0.2);
+    }
+    50% {
+        box-shadow: 0 10px 25px rgba(6, 118, 141, 0.4);
+    }
+}
+@keyframes popOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    70% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+#get-started-button {
+    font-family:"Caveat Brush", cursive ;
+    animation: popOut 2.1s ease-out;
+    animation-delay: 0.6s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    border-radius: 10px;
+    font-size: 40px;
+    position: absolute;
+    top: 450px;
+    left: 330px;
+    height:100px;
+    background-color: #026a81;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#get-started-button:hover {
+    background-color: #06768d;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+#get-started-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        100deg, 
+        transparent, 
+        rgba(247, 244, 244, 0.3), 
+        transparent
+    );
+    transition: all 0.6s;
+}
+
+#get-started-button:hover::before {
+    left: 100%;
+}
+.main-footer {
+    text-align: center;
+    font-size: 20px;
+    background-color: #002E4C;
+    opacity: 0.9;
+    color: #fff;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+#my-pic {
+    width: 450px;  /* Set a fixed width */
+    height: 450px; /* Same as width to ensure perfect circle */
+    border-radius: 50%; /* This makes the container a perfect circle */
+    object-fit: cover; /* This ensures the image covers the entire circular area */
+    border: 5px solid #065465; /* Optional: adds a border color matching your navbar */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3); 
+    position: absolute;
+    top:250px;
+    right:150px;
+}
+img:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    transition: transform 0.2s ease;
+}
+#bg-video {
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    width: 100%;
+    height:877px;
+    object-fit:cover; /* Ensure the video covers the entire screen */
+    z-index:-1 ;
+    opacity: 0.5; /* Send the video behind the content */
+}
+#bg-video-info{
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    width: 100%;
+    height:910px;
+    object-fit:cover; /* Ensure the video covers the entire screen */
+    z-index:-1 ;
+    opacity: 0.5; /* Send the video behind the content */
+}
+
+#bg-home {
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    width: 100%;
+    height:900px;
+    object-fit:cover; /* Ensure the video covers the entire screen */
+    z-index:-1 ;
+    opacity: 0.5; /* Send the video behind the content */
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    flex:1; 
+}
+.container::after {
+    content: '';
+    display: block;
+    height: 100px; /* Creates space before the footer */
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    font-size: 20px;/* Add margin at the bottom of the grid */
+}
+.info-grid-getintouch {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    font-size: 20px;/* Add margin at the bottom of the grid */
+    height:700px;
+}
+.info-card{
+    position:relative;
+    top:100px;
+    background-color: 	#E2DFD2;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 10px 20px white;
+}
+
+.card-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+
+
+.full-width-section {
+    grid-column: 1 / -1;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.resource-item {
+    background-color: #FFFFF0;
+    padding: 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+.resource-item-getintouch {
+    background-color: #FFFFF0;
+    padding: 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+    height:550px;
+}
+#goals {
+    text-align: center;
+    margin-top: 5px; /* Add margin at the top of the goals section */
+    padding: 20px;
+    border-radius: 12px; /* Optional: round the corners */
+}
+#goals-getintouch {
+    text-align: center;
+    margin-top: 5px; /* Add margin at the top of the goals section */
+    padding: 20px;
+    border-radius: 12px; /* Optional: round the corners */
+}
+
+
+#insta-link{
+    text-align: center;
+    text-decoration: none;
+    color:black;
+}
+@keyframes cardPopOut {
+    0% {
+        opacity: 0;
+        transform: 
+            perspective(1000px) 
+            rotateX(-20deg) 
+            scale(0.8) 
+            translateY(30px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: 
+            perspective(1000px) 
+            rotateX(10deg) 
+            scale(1.05) 
+            translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: 
+            perspective(1000px) 
+            rotrateX(0deg) 
+            scale(1) 
+            translateY(0);
+    }
+}
+
+.info-card {
+    opacity: 0;
+    transform: 
+        perspective(1000px) 
+        rotateX(-20deg) 
+        scale(0.8) 
+        translateY(30px);
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                opacity 0.6s ease;
+}
+
+.info-card.loaded {
+    opacity: 1;
+    transform: 
+        perspective(1000px) 
+        rotateX(0deg) 
+        scale(1) 
+        translateY(0);
+    animation: cardPopOut 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+/* Staggered animation delays for each card */
+.info-card:nth-child(1).loaded { animation-delay: 0.2s; }
+.info-card:nth-child(2).loaded { animation-delay: 0.4s; }
+.info-card:nth-child(3).loaded { animation-delay: 0.6s; }
+
+
+
+/* Keep your existing cardGlow and other animations */
+@keyframes cardGlow {
+    0%, 100% {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    50% {
+        box-shadow: 0 10px 25px rgba(6, 118, 141, 0.3);
+    }
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, transparent, y #BEBEBE transparent);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 14px;
+}
+
+.info-card:hover {
+    transform: 
+        translateY(-15px) 
+        rotate(2deg) 
+        scale(1.03);
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    box-shadow: 
+        0 15px 30px #F4DAB6,
+        0 10px 20px #F4DAB6;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, transparent, #BEBEBE, transparent);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 14px;
+}
+
+.info-card:hover::before {
+    opacity: 1;
+}
+/* Interactive card title effect */
+.card-title {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #333333, transparent);
+    transition: left 0.5s ease;
+}
+
+.info-card:hover .card-title::after {
+    left: 0;
+}
+
+/* List item hover effect */
+.card-list ol {
+    transition: 
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.card-list li:hover {
+    transform: translateX(2 0px);
+    color: #006D77;
+}
+#club-pic{
+    width:300px;
+    height:250px;
+    position:relative;
+    top:50px;
+    right:30px;
+    border-radius: 15px;
+    
+}
+#calc-pic{
+    width:250px;
+    height: 300px;
+    position:relative;
+    top:30px;
+    right:5px;
+    border-radius: 15px;
+}
+#weather-pic{
+    width:300px;
+    height: 300px;
+    position:relative;
+    top:30px;
+    right:20px;
+    border-radius: 15px;
+}
+#project-title{
+    text-align:left;
+    text-decoration: none;
+    color:black;
+    padding: 2px;
+    font-size: 25px;
+    content: "";
+}
+#project-github{
+    text-decoration: none;
+    color:black;
+    text-align: center;
+    position: relative;
+    top:10px;
+    left:20px;
+}
+.card-list {
+    list-style-type: none;
+}
+.card-list li :hover{
+    color: var(--primary-color);
+    size: 30px;
+}
+.card-list li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.card-list li::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+/* Container for email and contact sections */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1300px;
+    max-height: 500px;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 60px;
+    border-radius: 10px;
+}
+
+/* Contact Style */
+.resource-item-getintouch {
+    background-color: #FFFFF0;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    height: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Added soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.resource-item-getintouch:hover {
+    transform: translateY(-10px); /* Hover effect for a slight lift */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+}
+
+
+.resource-item-getintouch h3 {
+    font-size: 2rem;
+    color: #333; /* Dark text for headings */
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.resource-item-getintouch p {
+    font-size: 1.1rem;
+    color: #555; /* Lighter color for the description */
+    line-height: 1.5;
+}
+
+.resource-item-getintouch a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #06768d;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+.resource-item-getintouch a:hover {
+    color: #002E4C; /* Change link color on hover */
+}
+
+
+
+
