@@ -19,7 +19,7 @@ const MoreInfo = () => {
     <div>
       <header>
         <nav className="navbar">
-          <a className="navbar-home" href="/My-Website/">Johnny Hsieh</a>
+          <a className="navbar-home" href="/">Johnny Hsieh</a>
           <ul className="navbar-links">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/project">Projects</Link></li>
